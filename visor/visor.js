@@ -1,10 +1,11 @@
 // Reader of the summary bank of lutastudios.com for an HTML whose scripts the moderator turned on. It lives in this
 // other address so that nothing it runs shares a place with the site. The page of the bank puts it in a frame with
-// sandbox and hands it the HTML; this puts that HTML in a frame of its own, also with sandbox. Only a page of the site
-// (or one on the computer itself, for the tests), as the parent of this frame, can hand it something to show.
+// sandbox and hands it the HTML; this puts that HTML in a frame of its own, also with sandbox. Only a page of the site,
+// of Super CVG (which opens the bank's summaries in full screen) or one on the computer itself, for the tests, as the
+// parent of this frame, can hand it something to show.
 (() => {
   'use strict';
-  const PADRE = /^(https:\/\/lutastudios\.com|http:\/\/(localhost|127\.0\.0\.1)(:\d{1,5})?)$/;
+  const PADRE = /^(https:\/\/(supercvg\.)?lutastudios\.com|http:\/\/(localhost|127\.0\.0\.1)(:\d{1,5})?)$/;
   const TOPE = 6 * 1024 * 1024;
   // The same rule as this page, written again inside the document. Then, before anything of the document runs:
   //   · memory that lasts while it is open, because the frame has no origin and the browser gives it no storage;
